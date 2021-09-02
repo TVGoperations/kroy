@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Mathis";
+  src: url("/fonts/HelveticaRoundedLTStd-BdCn.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Franklin Gothic Book";
+  src: url("/fonts/HelveticaTextbookLTStd-Roman.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Faris";
+  src: url("/fonts/HelveticaTextbookLTStd-Roman.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wremena";
+  src: url("/fonts/HelveticaTextbookLTStd-Roman.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: white;
+  background-color: black;
+  transition: all 500ms ease-in-out;
+}
+
+.bc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    font-size: clamp(18px, 2vw, 28px);
+    margin-bottom: 1em;
+  }
+}
