@@ -29,7 +29,17 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const data = await getStaticPage(
     groq`
     *[_id == "homePage"][0] {
-      modules
+      modules[] {
+        ...,
+        _type == "photoCarousel" => {
+  				"heading": "gallery",
+          images[] {
+            ...,
+            asset->
+          }
+
+	      }
+      }
     }
   `,
     preview

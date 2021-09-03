@@ -12,14 +12,27 @@ interface Props {
 
 const Brands: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, brands } = content;
+
   return (
     <section
-      id={slugify(heading.toLowerCase())}
-      className="section"
+      // id={slugify(heading.toLowerCase())}
+      className="section section--brands"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
-      <div className="section__heading">
-        <h2>{heading}</h2>
+      <div className="section__inner">
+        <div className="section__heading">
+          <h2>{heading}</h2>
+        </div>
+        <div className="section__content">
+          {brands.map((b, idx) => (
+            <div className="brands">
+              <div>
+                <span>{idx + 1}</span>
+                <h3>{b.name}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

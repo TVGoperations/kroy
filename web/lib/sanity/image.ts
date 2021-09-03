@@ -4,16 +4,9 @@ import { sanityClient } from "./server";
 import { TFigure } from "types";
 import { CropMode, ImageFormat } from "@sanity/image-url/lib/types/types";
 
-const imageBuilder = sanityImage(sanityClient);
+export const imageBuilder = sanityImage(sanityClient);
 
-export function buildSrc(
-  image: TFigure,
-  width?: number,
-  height?: number,
-  quality: number = 80,
-  format?: ImageFormat,
-  crop?: CropMode
-) {
+export function buildSrc(image: TFigure, width?: number, height?: number, quality: number = 80, format?: ImageFormat) {
   let img = imageBuilder.image(image);
 
   if (width) {
@@ -30,11 +23,6 @@ export function buildSrc(
 
   if (quality) {
     img = img.quality(quality);
-  }
-
-  if (crop) {
-    img = img.fit("crop");
-    img = img.crop(crop);
   }
 
   return img.fit("max").auto("format").url();

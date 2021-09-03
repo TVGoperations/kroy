@@ -9,16 +9,18 @@ interface Props {
   className?: string;
 }
 
-const BlockContent = forwardRef(({ content, serializer, className = "bc" }: Props, ref: RefObject<HTMLDivElement>) => {
-  return (
-    <PortableText
-      ref={ref}
-      renderContainerOnSingleChild
-      className={className}
-      blocks={content}
-      serializers={serializer}
-    />
-  );
-});
+const BlockContent = forwardRef(
+  ({ content = [], serializer, className = "bc" }: Props, ref: RefObject<HTMLDivElement>) => {
+    return (
+      <PortableText
+        ref={ref}
+        renderContainerOnSingleChild
+        className={className}
+        blocks={content}
+        serializers={serializer}
+      />
+    );
+  }
+);
 
 export default BlockContent;

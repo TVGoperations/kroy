@@ -4,6 +4,7 @@ import { m } from "framer-motion";
 
 import Header from "components/Header";
 import PreviewAlert from "components/PreviewAlert";
+import Scroller from "components/Scroller";
 
 import { buildSrc } from "lib/sanity";
 import { WebsiteSchema } from "lib/util/schema";
@@ -82,6 +83,7 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
 
       <m.div initial="initial" animate="enter" exit="exit" variants={variants}>
         <Header navItems={navItems} />
+        {/* <Scroller navItems={navItems}></Scroller> */}
         <main>{children}</main>
         {preview ? <PreviewAlert /> : null}
         <footer></footer>

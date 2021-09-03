@@ -16,7 +16,7 @@ const Contact: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, email } = content;
   return (
     <section
-      id={slugify(heading.toLowerCase())}
+      // id={slugify(heading.toLowerCase())}
       className="section section--contact"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >

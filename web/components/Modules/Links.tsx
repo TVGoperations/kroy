@@ -20,7 +20,7 @@ const Links: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, portableSimple, links } = content;
   return (
     <section
-      id={slugify(heading.toLowerCase())}
+      // id={slugify(heading.toLowerCase())}
       className="section section--links"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
@@ -28,7 +28,16 @@ const Links: React.FC<Props> = ({ content }) => {
         <div className="section__heading">
           <h2>{heading}</h2>
         </div>
-        <BlockContent serializer={serializer} content={portableSimple} />
+        <div className="section__content">
+          <BlockContent serializer={serializer} content={portableSimple} />
+          <div className="links">
+            {links.map((l, idx) => (
+              <a href={l.url} key={idx}>
+                {l.name}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ const Text: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, portableSimple } = content;
   return (
     <section
-      id={slugify(heading.toLowerCase())}
+      // id={slugify(heading.toLowerCase())}
       className="section section--text"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >

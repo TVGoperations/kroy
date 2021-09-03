@@ -1,3 +1,19 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 41px;
+  padding: 20px;
+  mix-blend-mode: difference;
+  color: white;
+  h1 {
+    font-size: inherit;
+  }
+}
+
 .section {
   height: 100vh;
   min-height: 800px;
@@ -37,22 +53,6 @@
   }
 }
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 41px;
-  padding: 20px;
-  mix-blend-mode: difference;
-  color: white;
-  h1 {
-    font-size: inherit;
-  }
-}
-
 .section--hero {
   background-color: black;
 }
@@ -61,14 +61,68 @@
   padding: 60px 120px 60px 50px;
 }
 
+.section--brands {
+  padding: 60px 120px 60px 50px;
+  .section__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: calc(164px + 200px);
+  }
+
+  .brands {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 70px 150px;
+    width: 100%;
+
+    > div {
+      span {
+        line-height: 1;
+        font-size: clamp(40px, 13.5vw, 164px);
+      }
+      h3 {
+        line-height: 1;
+        margin-top: 20px;
+        font-size: clamp(20px, 3vw, 54px);
+      }
+    }
+  }
+}
+
+.section--gallery {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .gallery {
+    width: 100%;
+  }
+}
+
 .section--links {
   padding: 60px 120px 60px 50px;
   .bc {
     justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 140px;
+    padding-left: calc(164px + 80px);
+    > a {
+      font-size: clamp(20px, 3vw, 41px);
+    }
   }
 }
 
 .section--contact {
+  padding: 60px 120px 60px 50px;
   .section__content {
     font-size: 41px;
     font-size: clamp(20px, 3vw, 41px);
