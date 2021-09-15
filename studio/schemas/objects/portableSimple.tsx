@@ -1,5 +1,5 @@
 import React from "react";
-import { BiLinkExternal, BiLink } from "react-icons/bi";
+import { BiLinkExternal } from "react-icons/bi";
 
 export default {
   name: "portableSimple",
@@ -29,17 +29,11 @@ export default {
             type: "object",
             fields: [
               {
-                title: "Page Link",
-                name: "page",
-                type: "reference",
-                media: BiLink,
-                to: [{ type: "product" }, { type: "releasesPage" }, { type: "shopPage" }, { type: "infoPage" }],
-              },
-              {
                 title: "External URL",
                 name: "href",
                 type: "url",
                 media: BiLinkExternal,
+                validation: (Rule) => Rule.uri({ scheme: ["http", "https"] }).required(),
               },
             ],
           },

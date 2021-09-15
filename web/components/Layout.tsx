@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import { m } from "framer-motion";
 
-import Header from "components/Header";
+import Footer from "components/Footer";
+import { Header } from "components/Header";
 import PreviewAlert from "components/PreviewAlert";
-import Scroller from "components/Scroller";
 
 import { buildSrc } from "lib/sanity";
 import { WebsiteSchema } from "lib/util/schema";
@@ -44,15 +44,6 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="format-detection" content="telephone=no" />
-        <link rel="icon" href="/images/favicon.png" />
-        <link rel="mask-icon" href="/images/favicon.png" color="#000000" />
-        <link rel="apple-touch-icon" href="/images/favicon.png" />
-        <link rel="preconnect" href="https://cdn.sanity.io" />
-
         {siteUrl && <link rel="canonical" href={siteUrl} />}
 
         <title>{metaTitle}</title>
@@ -82,11 +73,11 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
       </Head>
 
       <m.div initial="initial" animate="enter" exit="exit" variants={variants}>
-        <Header navItems={navItems} />
-        {/* <Scroller navItems={navItems}></Scroller> */}
-        <main>{children}</main>
+        <main>
+          {children}
+          <Footer backgroundColor={site.footer.backgroundColor} quotes={site.footer.quotes} />
+        </main>
         {preview ? <PreviewAlert /> : null}
-        <footer></footer>
       </m.div>
     </>
   );

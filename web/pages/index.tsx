@@ -11,7 +11,7 @@ import { getStaticPage } from "lib/sanity";
 
 export default function Home({ data, preview }: { data: TLayout & THomePageData; preview: boolean }) {
   const { site, page } = data;
-  const { modules } = page;
+  const { modules, hero } = page;
 
   const navItems = modules
     .filter((m) => !!m.heading)
@@ -19,7 +19,7 @@ export default function Home({ data, preview }: { data: TLayout & THomePageData;
 
   return (
     <Layout site={site} page={page} preview={preview} navItems={navItems}>
-      <Hero />
+      <Hero video={hero.video} backgroundColor={hero.backgroundColor} navItems={navItems} />
       <Modules modules={modules} />
     </Layout>
   );
@@ -29,10 +29,13 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const data = await getStaticPage(
     groq`
     *[_id == "homePage"][0] {
+      "hero":*[_id == "hero"][0] {
+  			...,
+      	"video":video.asset->url
+	    },
       modules[] {
         ...,
         _type == "photoCarousel" => {
-  				"heading": "gallery",
           images[] {
             ...,
             asset->

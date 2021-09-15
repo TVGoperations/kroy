@@ -15,17 +15,17 @@ const Brands: React.FC<Props> = ({ content }) => {
 
   return (
     <section
-      // id={slugify(heading.toLowerCase())}
+      id={slugify(heading.toLowerCase())}
       className="section section--brands"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading">
+        <div className="section__heading t-mathis caps">
           <h2>{heading}</h2>
         </div>
         <div className="section__content">
           {brands.map((b, idx) => (
-            <div className="brands">
+            <div className="brands" key={idx}>
               <div>
                 <span>{idx + 1}</span>
                 <h3>{b.name}</h3>

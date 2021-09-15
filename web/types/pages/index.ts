@@ -1,4 +1,4 @@
-import { TSocialProfile, TFigure } from "..";
+import { TSocialProfile, TFigure, IHero } from "..";
 
 export type TColor = {
   title: string;
@@ -44,8 +44,11 @@ export type TLayout = {
   preview?: boolean;
 };
 
+export type THero = {};
+
 export type THomePageData = {
   page: {
+    hero: IHero;
     modules: Array<any>;
   };
 };

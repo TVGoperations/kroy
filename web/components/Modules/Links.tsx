@@ -18,19 +18,20 @@ interface Props {
 
 const Links: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, portableSimple, links } = content;
+
   return (
     <section
-      // id={slugify(heading.toLowerCase())}
+      id={slugify(heading.toLowerCase())}
       className="section section--links"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading">
+        <div className="section__heading t-mathis caps">
           <h2>{heading}</h2>
         </div>
         <div className="section__content">
-          <BlockContent serializer={serializer} content={portableSimple} />
-          <div className="links">
+          {portableSimple ? <BlockContent serializer={serializer} content={portableSimple} /> : null}
+          <div className="links t-wremena t-light">
             {links.map((l, idx) => (
               <a href={l.url} key={idx}>
                 {l.name}

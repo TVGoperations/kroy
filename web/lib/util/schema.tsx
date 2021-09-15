@@ -38,7 +38,7 @@ export const PersonSchema = ({
 const websiteSchema = (siteUrl: string) => ({
   "@context": "https://schema.org/",
   "@type": "WebSite",
-  name: "Denzel Curry",
+  name: "Karleen Roy",
   url: siteUrl,
 });
 

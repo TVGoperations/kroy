@@ -13,7 +13,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fullpage/react-fullpage": "^0.1.19",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^2.13.0",
     "@sanity/image-url": "^0.140.22",

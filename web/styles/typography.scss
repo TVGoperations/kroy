@@ -1,14 +1,6 @@
 @font-face {
   font-family: "Mathis";
-  src: url("/fonts/HelveticaRoundedLTStd-BdCn.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Franklin Gothic Book";
-  src: url("/fonts/HelveticaTextbookLTStd-Roman.woff2") format("woff2");
+  src: url("/fonts/SAMathis-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,7 +8,7 @@
 
 @font-face {
   font-family: "Faris";
-  src: url("/fonts/HelveticaTextbookLTStd-Roman.woff2") format("woff2");
+  src: url("/fonts/SAFaris-RegularCompressed.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -24,10 +16,51 @@
 
 @font-face {
   font-family: "Wremena";
-  src: url("/fonts/HelveticaTextbookLTStd-Roman.woff2") format("woff2");
-  font-weight: normal;
+  src: url("/fonts/WremenaRegular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "Wremena";
+  src: url("/fonts/WremenaBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wremena";
+  src: url("/fonts/WremenaLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.t-mathis {
+  font-family: "Mathis";
+}
+
+.t-faris {
+  font-family: "Faris";
+}
+
+.t-wremena {
+  font-family: "Wremena";
+}
+
+.t-normal {
+  font-weight: 400;
+}
+.t-bold {
+  font-weight: bold;
+}
+.t-light {
+  font-weight: 300;
+}
+.caps {
+  text-transform: uppercase;
 }
 
 html,
@@ -47,9 +80,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
 
   p {
     font-size: clamp(18px, 2vw, 28px);
     margin-bottom: 1em;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
   }
 }

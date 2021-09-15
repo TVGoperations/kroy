@@ -19,15 +19,17 @@ const Text: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, portableSimple } = content;
   return (
     <section
-      // id={slugify(heading.toLowerCase())}
+      id={slugify(heading.toLowerCase())}
       className="section section--text"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading">
+        <div className="section__heading t-mathis caps">
           <h2>{heading}</h2>
         </div>
-        <BlockContent serializer={serializer} content={portableSimple} />
+        <div className="section__content">
+          {portableSimple ? <BlockContent serializer={serializer} content={portableSimple} /> : null}
+        </div>
       </div>
     </section>
   );

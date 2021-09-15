@@ -1,9 +1,8 @@
 import React from "react";
+import { IFooter } from "types";
 
-interface Props {}
-
-const Footer: React.FC<Props> = ({}) => {
-  return <footer></footer>;
+const Footer: React.FC<IFooter> = ({ backgroundColor, quotes }) => {
+  return <footer className="footer" style={{ backgroundColor: backgroundColor?.value || "#FFF" }}></footer>;
 };
 
 export default Footer;

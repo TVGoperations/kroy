@@ -1,3 +1,15 @@
 html {
   scroll-behavior: smooth;
 }
+
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+}

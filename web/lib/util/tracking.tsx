@@ -20,30 +20,3 @@ function track(payload = {}) {
     ...payload,
   });
 }
-
-// export function trackEmailClick() {
-//   track({
-//     eventDetail: {
-//       category: "Engagement",
-//       action: "ClickEmail",
-//     },
-//   });
-// }
-// export function trackSocialClick(label: string) {
-//   track({
-//     eventDetail: {
-//       category: "Engagement",
-//       action: "ClickSocial",
-//       label: label,
-//     },
-//   });
-// }
-// export function trackProjectClick(label: string) {
-//   track({
-//     eventDetail: {
-//       category: "Engagement",
-//       action: "ClickProject",
-//       label: label,
-//     },
-//   });
-// }

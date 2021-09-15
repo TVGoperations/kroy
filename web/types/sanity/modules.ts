@@ -1,5 +1,5 @@
 import { KeyedObject } from "@sanity/types";
-import { TColor, TFigure, TBrand, TThirdPartyLink } from "../";
+import { TColor, TFigure, TBrand, TThirdPartyLink, TNavItem } from "../";
 
 export interface ITextSection extends KeyedObject {
   _type?: "textSection";
@@ -29,6 +29,16 @@ export interface IContactModule extends KeyedObject {
   backgroundColor: TColor;
   heading: string;
   email: string;
+}
+export interface IHero {
+  _type?: "hero";
+  backgroundColor: TColor;
+  video: string;
+  navItems: Array<TNavItem>;
+}
+export interface IFooter {
+  backgroundColor: TColor;
+  quotes: Array<any>;
 }
 
 export type TModule = ITextSection | ICarouselModule | IBrandsModule | ILinksModule | IContactModule;

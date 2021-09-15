@@ -16,15 +16,15 @@ const Contact: React.FC<Props> = ({ content }) => {
   const { backgroundColor, heading, email } = content;
   return (
     <section
-      // id={slugify(heading.toLowerCase())}
+      id={slugify(heading.toLowerCase())}
       className="section section--contact"
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading">
+        <div className="section__heading t-mathis caps">
           <h2>{heading}</h2>
         </div>
-        <div className="section__content">
+        <div className="section__content t-wremena t-light">
           <SVG.Envelope />
           <a href={`mailto:${email.toLowerCase()}`} target="_blank">
             {email}

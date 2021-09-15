@@ -1,15 +1,25 @@
 import { Block } from "@sanity/types";
 
-const strong = ({ children }) => <b>{children}</b>;
+const strong = ({ children }) => <b className="t-faris">{children}</b>;
 const em = ({ children }) => <em>{children}</em>;
 const underline = ({ children }) => <u>{children}</u>;
 const strikeThrough = ({ children }) => <s>{children}</s>;
 
+const link = ({ mark, children }) => {
+  const { href, slug, title } = mark;
+  return (
+    <a href={href} title={title ? title : ""} className="t-faris" target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  );
+};
+
 export const serializer = {
   types: {
-    block: (props) => <p>{props.children}</p>,
+    block: (props) => <p className="t-wremena t-light">{props.children}</p>,
   },
   marks: {
+    link,
     strong,
     em,
     underline,
