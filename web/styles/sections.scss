@@ -67,7 +67,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100%;
   }
 
@@ -159,6 +159,7 @@
 
 .section--brands {
   padding: 60px 120px 60px 50px;
+
   .section__content {
     display: flex;
     justify-content: center;
@@ -256,6 +257,7 @@
 
 .section--contact {
   padding: 60px 120px 60px 50px;
+
   .section__content {
     font-size: clamp(20px, 3vw, 41px);
     position: absolute;
