@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Router from "next/router";
 import { LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 
@@ -39,24 +39,24 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     Router.events.on("routeChangeError", () => {
       setLoading(false);
     });
-  }, []);
+  }, [router.asPath]);
 
   // intelligently add focus states if keyboard is used
-  const handleFirstTab = (event) => {
+  const handleFirstTab = useCallback((event) => {
     if (event.keyCode === 9) {
       if (isBrowser) {
         document.body.classList.add("is-tabbing");
         window.removeEventListener("keydown", handleFirstTab);
       }
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("keydown", handleFirstTab);
     return () => {
       window.removeEventListener("keydown", handleFirstTab);
     };
-  }, []);
+  }, [handleFirstTab]);
 
   return (
     <LazyMotion features={domAnimation}>

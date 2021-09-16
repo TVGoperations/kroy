@@ -26,7 +26,7 @@ const Contact: React.FC<Props> = ({ content }) => {
         </div>
         <div className="section__content t-wremena t-light">
           <SVG.Envelope />
-          <a href={`mailto:${email.toLowerCase()}`} target="_blank">
+          <a href={`mailto:${email.toLowerCase()}`} target="_blank" rel="noopener noreferrer">
             {email}
           </a>
         </div>

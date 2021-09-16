@@ -3,7 +3,6 @@ import Head from "next/head";
 import { m } from "framer-motion";
 
 import Footer from "components/Footer";
-import { Header } from "components/Header";
 import PreviewAlert from "components/PreviewAlert";
 
 import { buildSrc } from "lib/sanity";
@@ -62,8 +61,8 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
         )}
         {shareGraphic && (
           <>
-            <meta property="og:image" content={buildSrc(shareGraphic, 1200, 630, 75, null, "top")} />
-            <meta name="twitter:image" content={buildSrc(shareGraphic, 1200, 630, 75, null, "top")} />
+            <meta property="og:image" content={buildSrc(shareGraphic, 1200, 630, 75, null)} />
+            <meta name="twitter:image" content={buildSrc(shareGraphic, 1200, 630, 75, null)} />
           </>
         )}
         <meta property="og:type" content="website" />

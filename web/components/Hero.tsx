@@ -29,35 +29,36 @@ const variants = {
 const Hero: React.FC<IHero> = ({ video, backgroundColor, navItems }) => {
   const [navOpen, setNavOpen] = React.useState(false);
 
-  const handleClick = React.useCallback((e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    if (e.currentTarget.hash.startsWith("#")) {
-      const destination = document.querySelector(e.currentTarget.hash);
+  const handleClick = React.useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      e.preventDefault();
+      if (e.currentTarget.hash.startsWith("#")) {
+        const destination = document.querySelector(e.currentTarget.hash);
 
-      if (destination) {
-        if (navOpen) {
-          setNavOpen(false);
-          const t = setTimeout(() => {
+        if (destination) {
+          if (navOpen) {
+            setNavOpen(false);
+            const t = setTimeout(() => {
+              destination.scrollIntoView({
+                behavior: "smooth",
+              });
+              clearTimeout(t);
+            }, 250);
+          } else {
             destination.scrollIntoView({
               behavior: "smooth",
             });
-            clearTimeout(t);
-          }, 250);
-        } else {
-          destination.scrollIntoView({
-            behavior: "smooth",
-          });
+          }
         }
       }
-    }
-  }, []);
+    },
+    [navOpen]
+  );
 
   return (
     <section className={`section section--hero`} style={{ backgroundColor: backgroundColor?.value || "#FFF" }}>
       <header className="header t-wremena t-light">
-        <Link href={{ pathname: "/" }} shallow={true}>
-          <h1>Karleen Roy</h1>
-        </Link>
+        <h1>Karleen Roy</h1>
 
         <menu className="nav__desktop">
           <nav>

@@ -21,7 +21,7 @@ const PreviewAlert: React.FC = () => {
       setReady(true);
       clearTimeout(t);
     }, 500);
-  }, [0]);
+  }, []);
 
   return (
     <AnimatePresence>
