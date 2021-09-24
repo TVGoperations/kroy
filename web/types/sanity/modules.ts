@@ -1,5 +1,6 @@
 import { KeyedObject } from "@sanity/types";
 import { TColor, TFigure, TBrand, TThirdPartyLink, TNavItem } from "../";
+import { TQuote, TSocialProfile } from "./objects";
 
 export interface ITextSection extends KeyedObject {
   _type?: "textSection";
@@ -38,7 +39,8 @@ export interface IHero {
 }
 export interface IFooter {
   backgroundColor: TColor;
-  quotes: Array<any>;
+  quotes: Array<TQuote>;
+  instagram: TSocialProfile;
 }
 
 export type TModule = ITextSection | ICarouselModule | IBrandsModule | ILinksModule | IContactModule;

@@ -16,6 +16,7 @@ export type TFigure = KeyedObject &
 export type TSocialProfile = KeyedObject & {
   platform: string;
   url: string;
+  displayName: string;
 };
 
 export type TBrand = KeyedObject & {
@@ -23,6 +24,11 @@ export type TBrand = KeyedObject & {
   year: number;
   description: string;
   url: string;
+};
+
+export type TQuote = KeyedObject & {
+  quoteText: string;
+  quoteAttribution: string;
 };
 
 export type TThirdPartyLink = KeyedObject & {

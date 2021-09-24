@@ -1,0 +1,154 @@
+.section--brands {
+  padding: 60px 120px 60px 50px;
+
+  .section__content {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .brands {
+    display: grid;
+    grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr);
+    grid-template-rows: minmax(400px, 1fr) minmax(400px, 1fr);
+    gap: 70px 150px;
+    width: 100%;
+    padding-left: calc(164px + 80px);
+
+    .brand__item {
+      span {
+        line-height: 1;
+        font-size: clamp(100px, 13.5vw, 164px);
+        font-size: 165px;
+      }
+      h3 {
+        line-height: 1;
+        margin-top: 20px;
+        font-size: clamp(30px, 3vw, 54px);
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  @include media-xl {
+    .brands {
+      grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+      grid-template-rows: minmax(300px, 1fr) minmax(300px, 1fr);
+    }
+  }
+
+  @include media-lg {
+    padding: 40px 60px 40px 30px;
+
+    .section__content {
+      align-items: center;
+    }
+    .brands {
+      padding-left: calc(clamp(40px, 13.5vw, 164px) + 40px);
+      gap: 40px 80px;
+    }
+  }
+
+  @include media-md {
+    padding: 50px 16px 150px;
+
+    .brands {
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(400px, 1fr);
+      padding-left: 0;
+
+      gap: 30px;
+    }
+  }
+}
+
+.brand {
+  position: relative;
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    align-items: flex-start;
+
+    @include media-md {
+      flex-direction: row;
+      align-items: flex-end;
+      h3 {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__details {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/brand_bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__info {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 20px 20px;
+    height: 100%;
+    width: 80%;
+    max-width: 400px;
+    max-height: 300px;
+
+    h3 {
+      font-size: 30px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    p.t-wremena {
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .t-faris {
+      font-size: 19px;
+      line-height: 1.15;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .brand__link {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      svg {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

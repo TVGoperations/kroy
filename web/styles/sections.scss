@@ -67,7 +67,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     height: 100%;
   }
 
@@ -80,15 +80,16 @@
     .bc {
       padding-left: calc(clamp(40px, 13.5vw, 164px) + 40px);
     }
+
+    &__content {
+      justify-content: flex-start;
+    }
   }
 
   @include media-md {
     height: auto;
     min-height: 100vh;
 
-    &__content {
-      justify-content: flex-start;
-    }
     .bc {
       height: auto;
       padding-left: 0;
@@ -147,48 +148,6 @@
 
 .section--text {
   padding: 60px 120px 60px 50px;
-
-  @include media-lg {
-    padding: 40px 60px 40px 30px;
-  }
-
-  @include media-md {
-    padding: 50px 16px 25px;
-  }
-}
-
-.section--brands {
-  padding: 60px 120px 60px 50px;
-
-  .section__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding-left: calc(164px + 200px);
-  }
-
-  .brands {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 70px 150px;
-    width: 100%;
-
-    > div {
-      span {
-        line-height: 1;
-        font-size: clamp(40px, 13.5vw, 164px);
-      }
-      h3 {
-        line-height: 1;
-        margin-top: 20px;
-        font-size: clamp(20px, 3vw, 54px);
-      }
-    }
-  }
 
   @include media-lg {
     padding: 40px 60px 40px 30px;
@@ -292,6 +251,110 @@
 }
 
 .footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 500px;
   scroll-snap-align: start;
+  padding: 30px;
+
+  svg.footer__monogramMobile {
+    width: 55px;
+    display: none;
+    margin: 0px auto 50px;
+  }
+
+  &__quotes {
+    width: 100vw;
+    margin: 60px 0;
+    margin-left: -30px;
+  }
+
+  &__quote {
+    width: 100%;
+    text-align: center;
+    font-size: clamp(20px, 3vw, 41px);
+    font-weight: 300;
+  }
+
+  &__instagram {
+    text-align: center;
+    font-size: clamp(40px, 3vw, 95px);
+  }
+
+  &__credits {
+    flex-grow: 1;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > p {
+      font-size: clamp(20px, 3vw, 41px);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      line-height: 1;
+      padding: 0 2ch;
+      .t-faris {
+        font-size: 19px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+      .t-wremena {
+        font-size: 20px;
+      }
+    }
+
+    li:first-of-type {
+      padding-left: 0;
+    }
+    li:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  .footer__monogramDesktop {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content: space-between;
+    svg {
+      width: 55px;
+    }
+  }
+
+  @include media-xl {
+    ul {
+      flex-direction: column;
+    }
+  }
+
+  @include media-lg {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    div.footer__monogramDesktop {
+      bottom: 50px;
+    }
+  }
+
+  @include media-md {
+    div.footer__monogramDesktop {
+      display: none;
+    }
+    svg.footer__monogramMobile {
+      display: flex;
+    }
+  }
 }

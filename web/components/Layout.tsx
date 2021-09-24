@@ -8,7 +8,7 @@ import PreviewAlert from "components/PreviewAlert";
 import { buildSrc } from "lib/sanity";
 import { WebsiteSchema } from "lib/util/schema";
 
-import { TLayout } from "types";
+import { TLayout, TQuote } from "types";
 
 const duration = 0;
 
@@ -39,6 +39,8 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
   const shareTitle = page.seo?.shareTitle || site.seo?.shareTitle;
   const shareDesc = page.seo?.shareDesc || site.seo?.shareDesc;
   const shareGraphic = page.seo?.shareGraphic || site.seo?.shareGraphic;
+
+  const instagramProfile = site.socialProfiles.find((p) => p.platform === "Instagram");
 
   return (
     <>
@@ -74,7 +76,11 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
       <m.div initial="initial" animate="enter" exit="exit" variants={variants}>
         <main>
           {children}
-          <Footer backgroundColor={site.footer.backgroundColor} quotes={site.footer.quotes} />
+          <Footer
+            backgroundColor={site.footer.backgroundColor}
+            quotes={site.footer.quotes as Array<TQuote>}
+            instagram={instagramProfile}
+          />
         </main>
         {preview ? <PreviewAlert /> : null}
       </m.div>

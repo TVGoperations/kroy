@@ -35,3 +35,8 @@ $cr-light-teal: #dee7e2;
     @content;
   }
 }
+@mixin media-xxl {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}

@@ -32,21 +32,30 @@ export default {
           { title: "YouTube", value: "YouTube" },
         ],
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Display Name",
+      name: "displayName",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "URL",
       name: "url",
       type: "url",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     select: {
+      title: "displayName",
       icon: "platform",
       url: "url",
     },
-    prepare({ icon, url }) {
+    prepare({ title, icon, url }) {
       return {
-        title: icon,
+        title: title,
         subtitle: url ? url : "(URL not set)",
         media: getIcon(icon),
       };
