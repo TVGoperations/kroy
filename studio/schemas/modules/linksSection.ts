@@ -25,7 +25,7 @@ export default {
       name: "links",
       type: "array",
       of: [{ type: "thirdPartyLink" }],
-      validation: (Rule) => Rule.required().min(1).max(6),
+      validation: (Rule) => Rule.required().min(1),
     },
   ],
   preview: {

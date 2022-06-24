@@ -18,9 +18,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
@@ -39,6 +37,10 @@
     {
       "implements": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.ts"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./parts/resolve-actions.js"
     }
   ]
 }
