@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Brands: React.FC<Props> = ({ content }) => {
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(2);
   const { backgroundColor, heading, brands } = content;
 
   return (
@@ -23,7 +23,7 @@ const Brands: React.FC<Props> = ({ content }) => {
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading t-mathis caps">
+        <div className="section__heading t-wremena caps">
           <h2>{heading}</h2>
         </div>
         <div className="section__content">
@@ -39,7 +39,7 @@ const Brands: React.FC<Props> = ({ content }) => {
                 onMouseLeave={() => setActiveIndex(null)}
               >
                 <div className="brand__item">
-                  <span className={"t-mathis"}>{idx + 1}</span>
+                  <span className={"t-wremena"}>{idx + 1}</span>
                   <h3 className="t-wremena">{b.name}</h3>
                 </div>
                 <Brand brand={b} active={activeIndex === idx} />

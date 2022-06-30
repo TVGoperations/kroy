@@ -1,10 +1,10 @@
-@font-face {
-  font-family: "Mathis";
-  src: url("/fonts/SAMathis-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Mathis";
+//   src: url("/fonts/SAMathis-Regular.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 @font-face {
   font-family: "Faris";
@@ -38,9 +38,9 @@
   font-display: swap;
 }
 
-.t-mathis {
-  font-family: "Mathis";
-}
+// .t-mathis {
+//   font-family: "Mathis";
+// }
 
 .t-faris {
   font-family: "Faris";
@@ -83,7 +83,7 @@ body {
   overflow-y: auto;
 
   p {
-    font-size: clamp(18px, 2vw, 28px);
+    font-size: clamp(18px, 2vw, 24px);
     margin-bottom: 1em;
   }
   p:last-of-type {

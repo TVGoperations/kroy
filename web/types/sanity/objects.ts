@@ -1,17 +1,18 @@
-import { Reference, ImageCrop, ImageHotspot, KeyedObject, Image, ImageMetadata } from "@sanity/types";
+import { Asset, ImageCrop, ImageHotspot, KeyedObject } from "@sanity/types";
 
-export type TFigure = KeyedObject &
-  Image & {
-    _type: "figure";
-    alt: string;
-    caption?: string;
-    crop?: ImageCrop;
-    hotspot?: ImageHotspot;
-    asset: Reference &
-      Image & {
-        metadata?: ImageMetadata;
-      };
-  };
+export declare type SanityKeyed<T> = T extends object
+  ? T & {
+      _key: string;
+    }
+  : T;
+export interface IFigure {
+  [key: string]: unknown; // We allow meta-fields on image
+  _type: "figure";
+  alt: string;
+  asset: Asset;
+  crop?: ImageCrop;
+  hotspot?: ImageHotspot;
+}
 
 export type TSocialProfile = KeyedObject & {
   platform: string;

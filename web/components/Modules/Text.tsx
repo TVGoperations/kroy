@@ -24,7 +24,7 @@ const Text: React.FC<Props> = ({ content }) => {
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading t-mathis caps">
+        <div className="section__heading t-wremena caps">
           <h2>{heading}</h2>
         </div>
         <div className="section__content">

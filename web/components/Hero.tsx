@@ -60,7 +60,7 @@ const Hero: React.FC<IHero> = ({ video, backgroundColor, navItems }) => {
       <header className="header t-wremena t-light">
         <h1>Karleen Roy</h1>
 
-        <menu className="nav__desktop">
+        {/* <menu className="nav__desktop">
           <nav>
             {navItems.map((i, idx) => (
               <React.Fragment key={i.id}>
@@ -72,7 +72,7 @@ const Hero: React.FC<IHero> = ({ video, backgroundColor, navItems }) => {
               </React.Fragment>
             ))}
           </nav>
-        </menu>
+        </menu> */}
 
         <menu className={cx("nav__mobile")}>
           <button onClick={() => setNavOpen(!navOpen)}>{navOpen ? "Close" : "Menu"}</button>

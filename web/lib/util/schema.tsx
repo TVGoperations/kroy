@@ -1,16 +1,16 @@
 import React from "react";
 import { buildSrc } from "lib/sanity";
 
-import { TSocialProfile, TFigure } from "types";
+import { TSocialProfile, IFigure } from "types";
 
-const personSchema = (image: TFigure, socialProfiles: Array<TSocialProfile>, siteUrl: string) => {
+const personSchema = (image: IFigure, socialProfiles: Array<TSocialProfile>, siteUrl: string) => {
   const sameAs = [...socialProfiles.map((p) => p.url), "https://en.wikipedia.org/wiki/Denzel_Curry", siteUrl];
   return {
     "@context": "https://schema.org/",
     "@type": "Person",
     name: "Denzel Curry",
     url: "https://www.denzelcurry.com",
-    image: buildSrc(image, 800, null, 80, "jpg"),
+    image: buildSrc(image, { width: 800, height: 800, quality: 80, format: "jpg" }),
     sameAs: sameAs,
   };
 };
@@ -20,7 +20,7 @@ export const PersonSchema = ({
   socialProfiles,
   siteUrl,
 }: {
-  image: TFigure;
+  image: IFigure;
   socialProfiles: Array<TSocialProfile>;
   siteUrl: string;
 }) => {

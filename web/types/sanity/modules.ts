@@ -1,6 +1,6 @@
 import { KeyedObject } from "@sanity/types";
-import { TColor, TFigure, TBrand, TThirdPartyLink, TNavItem } from "../";
-import { TQuote, TSocialProfile } from "./objects";
+import { TColor, IFigure, TBrand, TThirdPartyLink, TNavItem } from "../";
+import { SanityKeyed, TQuote, TSocialProfile } from "./objects";
 
 export interface ITextSection extends KeyedObject {
   _type?: "textSection";
@@ -10,7 +10,7 @@ export interface ITextSection extends KeyedObject {
 }
 export interface ICarouselModule extends KeyedObject {
   _type?: "photoCarousel";
-  images: Array<TFigure>;
+  images: Array<SanityKeyed<IFigure>>;
 }
 export interface IBrandsModule extends KeyedObject {
   _type?: "brandsSection";

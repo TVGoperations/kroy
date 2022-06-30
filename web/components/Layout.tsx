@@ -63,8 +63,26 @@ const Layout: React.FC<TLayout> = ({ site, page, children, navItems, preview = f
         )}
         {shareGraphic && (
           <>
-            <meta property="og:image" content={buildSrc(shareGraphic, 1200, 630, 75, null)} />
-            <meta name="twitter:image" content={buildSrc(shareGraphic, 1200, 630, 75, null)} />
+            <meta
+              property="og:image"
+              content={
+                buildSrc(shareGraphic, {
+                  width: 1200,
+                  height: 630,
+                  quality: 75,
+                }) as string
+              }
+            />
+            <meta
+              name="twitter:image"
+              content={
+                buildSrc(shareGraphic, {
+                  width: 1200,
+                  height: 630,
+                  quality: 75,
+                }) as string
+              }
+            />
           </>
         )}
         <meta property="og:type" content="website" />

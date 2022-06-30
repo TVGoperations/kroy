@@ -26,14 +26,14 @@ const Links: React.FC<Props> = ({ content }) => {
       style={{ backgroundColor: backgroundColor?.value || "#FFF" }}
     >
       <div className="section__inner">
-        <div className="section__heading t-mathis caps">
+        <div className="section__heading t-wremena caps">
           <h2>{heading}</h2>
         </div>
         <div className="section__content">
           {portableSimple ? <BlockContent serializer={serializer} content={portableSimple} /> : null}
           <div className="links t-wremena t-light">
             {links.map((l, idx) => (
-              <a href={l.url} key={idx}>
+              <a href={l.url} key={idx} target="_blank" rel="noreferrer">
                 {l.name}
               </a>
             ))}

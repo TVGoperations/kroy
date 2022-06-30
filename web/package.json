@@ -19,7 +19,8 @@
     "classnames": "^2.3.1",
     "framer-motion": "^4.1.17",
     "groq": "^2.13.0",
-    "keen-slider": "^5.5.1",
+    "keen-slider": "6.7.0",
+    "lodash.get": "^4.4.2",
     "next": "11.0.1",
     "next-sanity": "^0.3.0",
     "next-sanity-image": "^3.1.5",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^10.2.3",
     "@sanity/base": "^2.10.5",
+    "@types/lodash.get": "^4.4.7",
     "@types/node": "^16.4.8",
     "@types/react": "^17.0.15",
     "@types/react-icons": "^3.0.0",

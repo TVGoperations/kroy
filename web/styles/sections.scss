@@ -23,8 +23,9 @@
   .nav__desktop {
     display: block;
   }
+
   .nav__mobile {
-    display: none;
+    // display: none;
     text-align: right;
 
     nav {
@@ -36,14 +37,14 @@
     }
   }
 
-  @include media-lg {
-    .nav__desktop {
-      display: none;
-    }
-    .nav__mobile {
-      display: block;
-    }
-  }
+  // @include media-lg {
+  // .nav__desktop {
+  //   display: none;
+  // }
+  // .nav__mobile {
+  //   display: block;
+  // }
+  // }
 
   @include media-md {
     padding: 20px 10px;
@@ -55,7 +56,7 @@
   min-height: 800px;
   padding: 10px 50px;
   position: relative;
-  scroll-snap-align: start;
+  // scroll-snap-align: start;
 
   &__inner {
     max-width: 1800px;
@@ -99,7 +100,7 @@
 }
 
 .section__heading {
-  font-size: clamp(40px, 13.5vw, 164px);
+  font-size: clamp(40px, 12vw, 82px);
   position: absolute;
   top: 0;
   height: 100%;
@@ -133,6 +134,9 @@
 }
 
 .section--hero {
+  height: 56.5vw;
+  max-height: 100vh;
+  min-height: unset;
   padding: 20px;
   background-color: black;
 
@@ -144,32 +148,50 @@
     top: 0;
     left: 0;
   }
+
+  @include media-sm {
+    height: 100vh;
+  }
 }
 
 .section--text {
-  padding: 60px 120px 60px 50px;
+  height: unset;
+  max-height: unset;
+  min-height: unset;
+  padding: 60px 120px 60px 60px;
 
   @include media-lg {
-    padding: 40px 60px 40px 30px;
+    padding: 40px 60px 40px 40px;
   }
 
   @include media-md {
-    padding: 50px 16px 25px;
+    padding: 50px 16px 50px;
   }
 }
 
 .section--gallery {
+  max-height: 70vh;
+  min-height: unset;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+
   .gallery {
     width: 100%;
+    height: 100%;
+  }
+
+  @include media-sm {
+    max-height: 100vh;
   }
 }
 
 .section--links {
-  padding: 60px 120px 60px 50px;
+  height: unset;
+  min-height: unset;
+
+  padding: 60px 120px 60px 60px;
 
   .bc {
     justify-content: flex-start;
@@ -188,6 +210,12 @@
     }
   }
 
+  @include media-xl {
+    .links {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   @include media-lg {
     .bc {
       margin-bottom: 30px;
@@ -199,12 +227,16 @@
   }
 
   @include media-md {
-    padding: 50px 16px 25px;
+    padding: 50px 16px 50px;
 
     .links {
-      grid-template-columns: 1fr 1fr;
       padding-left: 0;
       padding-right: 0;
+    }
+
+    .links a {
+      text-align: center;
+      width: 100%;
     }
 
     .bc {
@@ -215,6 +247,7 @@
 }
 
 .section--contact {
+  height: unset;
   padding: 60px 120px 60px 50px;
 
   .section__content {
@@ -255,8 +288,8 @@
   display: flex;
   flex-direction: column;
   min-height: 500px;
-  scroll-snap-align: start;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   svg.footer__monogramMobile {
     width: 55px;
@@ -265,21 +298,23 @@
   }
 
   &__quotes {
-    width: 100vw;
+    width: 100vw !important;
     margin: 60px 0;
-    margin-left: -30px;
   }
 
   &__quote {
-    width: 100%;
-    text-align: center;
-    font-size: clamp(20px, 3vw, 41px);
-    font-weight: 300;
+    p {
+      text-align: center;
+      font-size: clamp(20px, 3vw, 41px);
+      font-weight: 300;
+    }
   }
 
   &__instagram {
     text-align: center;
     font-size: clamp(40px, 3vw, 95px);
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   &__credits {
@@ -290,6 +325,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
 
     > p {
       font-size: clamp(20px, 3vw, 41px);
@@ -303,7 +340,7 @@
 
     li {
       line-height: 1;
-      padding: 0 2ch;
+
       .t-faris {
         font-size: 19px;
         letter-spacing: 0.13em;
@@ -312,13 +349,6 @@
       .t-wremena {
         font-size: 20px;
       }
-    }
-
-    li:first-of-type {
-      padding-left: 0;
-    }
-    li:last-of-type {
-      padding-right: 0;
     }
   }
 

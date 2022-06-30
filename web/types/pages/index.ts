@@ -1,4 +1,4 @@
-import { TSocialProfile, TFigure, IHero } from "..";
+import { TSocialProfile, IFigure, IHero } from "..";
 
 export type TColor = {
   title: string;
@@ -12,7 +12,7 @@ export type TSeoData = {
   shareTitle: string;
   shareDesc: string;
   metaKeywords: string;
-  shareGraphic: TFigure;
+  shareGraphic: IFigure;
 };
 
 export type TSiteData = {
