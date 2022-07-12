@@ -85,7 +85,7 @@ const Hero: React.FC<IHero> = ({ video, backgroundColor, navItems }) => {
           </m.nav>
         </menu>
       </header>
-      <video autoPlay muted={true} loop={true}>
+      <video autoPlay muted={true} loop={true} playsInline>
         <source src={video} type="video/mp4" />
       </video>
     </section>
