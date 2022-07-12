@@ -27,6 +27,7 @@ const Brand: React.FC<{ brand: TBrand; active: boolean }> = ({ brand, active }) 
       {active && (
         <m.div className="brand__details" variants={variants} initial={"inactive"} exit={"inative"} animate={"active"}>
           <div className="brand__info">
+            <SVG.BrandTop />
             <h3 className="t-wremena">{name}</h3>
             <p className="t-faris">{`EST ${year}`}</p>
             <p className="t-wremena">{description}</p>
@@ -36,6 +37,7 @@ const Brand: React.FC<{ brand: TBrand; active: boolean }> = ({ brand, active }) 
                 <span>{"LEARN MORE"}</span>
               </a>
             </div>
+            <SVG.BrandBottom />
           </div>
         </m.div>
       )}
