@@ -18,6 +18,12 @@ export default {
       validation: (Rule) => Rule.max(15).warning("Shorter headings work better"),
     },
     {
+      title: "Image (Optional)",
+      name: "image",
+      type: "figure",
+      validation: (Rule) => Rule.optional(),
+    },
+    {
       ...portableSimple,
     },
   ],
