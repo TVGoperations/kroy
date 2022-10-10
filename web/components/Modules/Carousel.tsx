@@ -43,7 +43,7 @@ const Carousel: React.FC<Props> = ({ content }) => {
           if (mouseOver) return;
           timeout = setTimeout(() => {
             if (slider) slider.next();
-          }, 2000);
+          }, 5000);
         }
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
@@ -75,7 +75,15 @@ const Carousel: React.FC<Props> = ({ content }) => {
               instanceRef.current?.moveToIdx(idx);
             }}
           >
-            <Image image={img} alt={img.alt} srcSizes={[300, 600, 1200, 1800]} />
+            <Image
+              image={img}
+              layout="fill"
+              alt={img.alt}
+              width={800}
+              height={800}
+              aspect={1}
+              srcSizes={[300, 600, 1200, 1800]}
+            />
           </div>
         ))}
       </div>

@@ -28,7 +28,7 @@ interface Props {
   fit?: FitMode;
   onLoad?: () => void | undefined;
   className?: string;
-  noRadius?: boolean;
+  layout?: string;
   motionProps?: MotionProps;
 }
 
@@ -44,7 +44,7 @@ const Image: React.FC<Props> = ({
   quality = DEFAULT_QUALITY,
   lazy = true,
   fit = DEFUALT_FIT,
-  noRadius = false,
+  layout = "intrinsic",
   onLoad,
   className = "",
   motionProps = {},
@@ -94,13 +94,21 @@ const Image: React.FC<Props> = ({
   return (
     <m.figure
       {...motionProps}
-      style={style}
       className={cx("image", className, {
-        "image--nr": noRadius,
         loaded: isLoaded,
       })}
     >
-      <img src={lqip} alt="" className="image__placeholder" role="presentation" aria-hidden="true" />
+      <div
+        className={cx("ar", {
+          "has-fill": layout === "fill" || layout === "contain",
+        })}
+        style={style}
+      >
+        <picture>
+          <img src={lqip} alt="" className="image__placeholder" role="presentation" aria-hidden="true" />
+        </picture>
+      </div>
+
       <img
         role={presentation ? "presentation" : undefined}
         ref={ref}

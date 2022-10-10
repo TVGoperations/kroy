@@ -85,8 +85,16 @@ body {
   p {
     font-size: clamp(18px, 2vw, 24px);
     margin-bottom: 1em;
+    min-height: 1em;
   }
+
   p:last-of-type {
     margin-bottom: 0;
+  }
+
+  &--sm {
+    p {
+      font-size: 16px;
+    }
   }
 }

@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
     *[_id == "homePage"][0] {
       "hero":*[_id == "hero"][0] {
   			...,
-      	"video":video.asset->url
+      	"video": video.asset -> url
 	    },
       modules[] {
         ...,
@@ -40,7 +40,12 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
             ...,
             asset->
           }
-
+	      },
+        _type == "textSection" => {
+          image {
+            ...,
+            asset->
+          }
 	      }
       }
     }
