@@ -76,15 +76,17 @@ const Footer: React.FC<IFooter> = ({ backgroundColor, quotes, instagram }) => {
         </p>
       )}
 
-      <div ref={sliderRef} className="keen-slider footer__quotes">
-        {[...quotes, ...quotes].map((q, idx) => (
-          <div key={idx} className="keen-slider__slide footer__quote">
-            <p className="t-wremena">
-              {`“${q.quoteText}”`} — {q.quoteAttribution}
-            </p>
-          </div>
-        ))}
-      </div>
+      {quotes.length > 0 ? (
+        <div ref={sliderRef} className="keen-slider footer__quotes">
+          {[...quotes, ...quotes].map((q, idx) => (
+            <div key={idx} className="keen-slider__slide footer__quote">
+              <p className="t-wremena">
+                {`“${q.quoteText}”`} — {q.quoteAttribution}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : null}
 
       <SVG.Monogram className="footer__monogramMobile" />
 
