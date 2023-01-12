@@ -33,7 +33,7 @@ const Text: React.FC<Props> = ({ content }) => {
         <div className="section__content">
           {image ? (
             <div className="section--text__image">
-              <Image image={image} alt={image.alt} width={800} height={800} aspect={1} srcSizes={[300, 600, 1200]} />
+              <Image image={image} alt={image.alt} width={800} srcSizes={[300, 600, 1200]} />
             </div>
           ) : null}
           {portableSimple ? (
