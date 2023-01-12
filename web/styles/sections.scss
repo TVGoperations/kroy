@@ -228,6 +228,10 @@
     max-height: 100vh;
     height: 50vh;
   }
+
+  @include media-md {
+    height: 70vh;
+  }
 }
 
 .section--links {
