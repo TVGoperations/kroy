@@ -171,10 +171,18 @@
 }
 
 .section--text-image {
+  @include media-lg {
+    padding: 40px 40px 40px 40px;
+  }
+
   .section__content {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .bc {
+      padding-left: 0;
+    }
 
     > div:nth-child(1) {
       height: 100%;

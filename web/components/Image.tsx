@@ -74,7 +74,7 @@ const Image: React.FC<Props> = ({
 
   const srcSet = buildSrcSet(image, {
     ...{ srcSizes },
-    ...{ aspect },
+    ...{ aspect: aspectRatio },
     ...{ fit },
     ...{ quality },
   });
