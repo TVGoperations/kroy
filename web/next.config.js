@@ -3,7 +3,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const BASE_URL = process.env.NODE_ENV === "development" ? `http://localhost:3000` : "https://kroy.vercel.app";
-
 module.exports = withBundleAnalyzer({
   env: {
     BASE_URL,
