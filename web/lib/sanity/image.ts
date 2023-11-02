@@ -1,9 +1,10 @@
 import sanityImage from "@sanity/image-url";
 import { sanityClient } from "./server";
+import imageUrlBuilderConstructor from "@sanity/image-url";
 
 import type { ImageFormat, FitMode, IFigure } from "types";
 
-export const imageBuilder = sanityImage(sanityClient);
+export const imageBuilder = imageUrlBuilderConstructor(sanityClient);
 
 interface IBuildSrc {
   width?: number;

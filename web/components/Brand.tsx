@@ -23,7 +23,7 @@ const variants = {
 const Brand: React.FC<{ brand: TBrand; active: boolean }> = ({ brand, active }) => {
   const { description, name, url, year } = brand;
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       {active && (
         <m.div className="brand__details" variants={variants} initial={"inactive"} exit={"inative"} animate={"active"}>
           <div className="brand__info">
