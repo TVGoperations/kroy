@@ -61,7 +61,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <LazyMotion features={domAnimation}>
       <AnimatePresence
-        exitBeforeEnter
+        mode="wait"
         onExitComplete={() => {
           window.scrollTo(0, 0);
           document.body.classList.remove("overflow-hidden");
